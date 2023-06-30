@@ -1,10 +1,12 @@
+'use client'
 import Image from 'next/image'
+import { useState } from 'react'
 
 function Square (){
  //banner
     return (
         <div>
-            welcome to the crypto grocery
+            Title
         </div>
     );
 }
@@ -32,17 +34,30 @@ return(
     )
 }
 
-function lists (){
-    let t = (<li>test</li>);
-    let t1 = (<div className='board-row'>{t}</div>);
-    let tmp = [];
-    for (var i =0;i<100;i++){
-        if(i%3==0){
-            tmp.push(t1);
-        }else{
-            tmp.push(t);
-        }
 
+function Sample (){
+    let t = (<button
+        className = 'bg-neutral-700 p-4'
+        onClick={()=> alert('test')}>
+            test
+        </button>);
+    let show = false;
+    let collapse = (
+        <button
+        onClick={()=> {show = !show;}}
+        >
+        this is a button
+        </button>
+    );
+    let t1 = (<div className='
+    w-3/4 grid gap-4 grid-cols-3 grid-rows-flex m-8'
+    >
+    {t}{t}{t}
+    </div>);
+    let tmp = [];
+    tmp.push(collapse);
+    for (var i =0;i<100;i++){
+            tmp.push(t1);
     }
     return (tmp);
 }
@@ -54,7 +69,7 @@ export default function Home() {
     <div className='bg-gray-900'>
         <Square />
         <Square2 />
-        <lists />
+        <Sample />
     </div>
 
   </>
